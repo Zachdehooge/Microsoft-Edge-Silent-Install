@@ -1,2 +1,2 @@
 # MicrosoftEdge-Installer
-A PowerShell script to install MicrosoftEdge in the enterprise environment 
+A PowerShell script to install MicrosoftEdge in the enterprise environment silently
