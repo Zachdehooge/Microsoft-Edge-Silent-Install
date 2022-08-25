@@ -32,6 +32,7 @@
 .LINK
 	http://psappdeploytoolkit.com
 #>
+
 [CmdletBinding()]
 Param (
 	## Script Parameters: These parameters are passed to the script when it is called externally from a scheduled task or because of an Image File Execution Options registry setting
@@ -267,18 +268,18 @@ If (-not (Test-Path -LiteralPath $appDeployCustomTypesSourceCode -PathType 'Leaf
 [string]$appDeployLogoIcon = Join-Path -Path $scriptRoot -ChildPath $configBannerIconFileName
 [string]$appDeployLogoBanner = Join-Path -Path $scriptRoot -ChildPath $configBannerIconBannerName
 #  Check that dependency files are present
-If (-not (Test-Path -LiteralPath $appDeployLogoIcon -PathType 'Leaf')) { Throw 'App Deploy logo icon file not found.' }
-If (-not (Test-Path -LiteralPath $appDeployLogoBanner -PathType 'Leaf')) { Throw 'App Deploy logo banner file not found.' }
+#If (-not (Test-Path -LiteralPath $appDeployLogoIcon -PathType 'Leaf')) { Throw 'App Deploy logo icon file not found.' }
+#If (-not (Test-Path -LiteralPath $appDeployLogoBanner -PathType 'Leaf')) { Throw 'App Deploy logo banner file not found.' }
 
 Add-Type -AssemblyName 'System.Drawing' -ErrorAction 'Stop'
-[System.Drawing.Bitmap]$appDeployLogoBannerObject = New-Object System.Drawing.Bitmap $appDeployLogoBanner
-[Int32]$appDeployLogoBannerBaseHeight = 50
+#[System.Drawing.Bitmap]$appDeployLogoBannerObject = New-Object System.Drawing.Bitmap $appDeployLogoBanner
+#[Int32]$appDeployLogoBannerBaseHeight = 50
 
-[Int32]$appDeployLogoBannerHeight = $appDeployLogoBannerObject.Height
-if ($appDeployLogoBannerHeight -gt $appDeployLogoBannerMaxHeight) {
-	$appDeployLogoBannerHeight = $appDeployLogoBannerMaxHeight
-}
-[Int32]$appDeployLogoBannerHeightDifference = $appDeployLogoBannerHeight - $appDeployLogoBannerBaseHeight
+#[Int32]$appDeployLogoBannerHeight = $appDeployLogoBannerObject.Height
+#if ($appDeployLogoBannerHeight -gt $appDeployLogoBannerMaxHeight) {
+#	$appDeployLogoBannerHeight = $appDeployLogoBannerMaxHeight
+#}
+#[Int32]$appDeployLogoBannerHeightDifference = $appDeployLogoBannerHeight - $appDeployLogoBannerBaseHeight
 
 #  Get Toolkit Options
 [Xml.XmlElement]$xmlToolkitOptions = $xmlConfig.Toolkit_Options
