@@ -1,4 +1,4 @@
-# MicrosoftEdge-Installer
+# Microsoft Edge Enterprise Silent Installer
 * A PowerShell script to install MicrosoftEdge in the enterprise environment silently across all profiles
     * Download MirosoftEdge-Installer zip file
     * Extract MirosoftEdge-Installer zip file
